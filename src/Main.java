@@ -3,6 +3,7 @@ import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
+
         JFrame obj = new JFrame ();
         GamePlay gameplay = new GamePlay();
 
