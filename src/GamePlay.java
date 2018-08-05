@@ -117,7 +117,6 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {
         enemyImage = new ImageIcon("assets/enemy.png");
 
         if ((enemyXpos[xPos] == snakeXlenght[0]) && enemyYpos[yPos] == snakeYlenght[0]) {
-
             score++;
             lenghtOfSnake++;
             xPos = random.nextInt(34);
@@ -134,17 +133,14 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {
                 down = false;
 
                 g.setColor(Color.WHITE);
-                g.setFont(new Font("arial",Font.BOLD,50));
-                g.drawString("Game Over",300,300);
+                g.setFont(new Font("arial", Font.BOLD, 50));
+                g.drawString("Game Over", 300, 300);
 
-                g.setFont(new Font("arial",Font.BOLD,20));
-                g.drawString("Space to RESTART",350,340);
+                g.setFont(new Font("arial", Font.BOLD, 20));
+                g.drawString("Space to RESTART", 350, 340);
             }
-
         }
-
         g.dispose();
-
     }
 
     @Override
@@ -166,7 +162,6 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {
             }
             repaint();
         }
-
         if (left) {
             for (int r = lenghtOfSnake - 1; r >= 0; r--) {
                 snakeYlenght[r + 1] = snakeYlenght[r];
@@ -215,24 +210,20 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {
             }
             repaint();
         }
-
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
-
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             moves = 0;
             score = 0;
             lenghtOfSnake = 3;
             repaint();
         }
-
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             moves++;
             right = true;
@@ -282,8 +273,8 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {
             right = false;
         }
     }
+
     @Override
     public void keyReleased(KeyEvent e) {
-
     }
 }
